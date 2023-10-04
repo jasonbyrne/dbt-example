@@ -33,7 +33,7 @@ docker-compose up -d
 
 ### Access to PgAdmin
 
-- URL: http://localhost:8080 (default port)
+- URL: http://localhost:8888 (default port)
 - Username: admin@admin.com (default)
 - Password: admin (default)
 
@@ -43,3 +43,8 @@ docker-compose up -d
 - Port: 5432
 - Username: env variable `POSTGRES_USER` or default `admin`
 - Password: env variable `POSTGRES_PASSWORD` or default `admin`
+
+## Dataset
+
+We are using a sample dataset of video game sales, source from here:
+https://www.kaggle.com/datasets/ulrikthygepedersen/video-games-sales
