@@ -1,0 +1,15 @@
+version: 2
+
+devfest:
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: localhost
+      port: 5432
+      user: admin
+      pass: admin
+      dbname: warehouse
+      schema: public
+
+  target: dev
