@@ -4,11 +4,31 @@ This project is a boilerplate to accompany my session on the basics of dbt, firs
 
 ## Before getting started
 
-You must install:
+You must install these prerequisites.
 
-- docker >= 17.12.0+
-- docker-compose
-- dbt CLI
+### Docker Desktop
+
+Follow the directions here for your operating system: [https://docs.docker.com/desktop/]
+
+### Python
+
+Follow the directions here for your operating system: [https://python.land/installing-python]
+
+### dbt
+
+If you have Python installed then you should be able to run this command:
+
+```
+pip install dbt-postgres
+```
+
+If that doesn't work try:
+
+```
+pip3 install dbt-postgres
+```
+
+If you have further issues, follow the directions here: [https://docs.getdbt.com/docs/core/pip-install]
 
 ## Getting Started
 
