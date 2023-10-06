@@ -1,44 +1,44 @@
 
 WITH na_sales AS (
     SELECT
-        {{ generate_id('name') }} AS game_id
-        , {{ generate_id('platform') }} AS console_id
+        game_id
+        , console_id
         , 'na' as region_id
         , na_sales AS sales_subtotal
-    FROM {{ ref('raw__sales') }}
+    FROM {{ ref('stg__sales') }}
     WHERE na_sales > 0
 ),
 eu_sales AS (
     SELECT
-        {{ generate_id('name') }} AS game_id
-        , {{ generate_id('platform') }} AS console_id
+        game_id
+        , console_id
         , 'eu' as region_id
         , eu_sales AS sales_subtotal
-    FROM {{ ref('raw__sales') }}
+    FROM {{ ref('stg__sales') }}
     WHERE eu_sales > 0
 ),
 jp_sales AS (
     SELECT
-        {{ generate_id('name') }} AS game_id
-        , {{ generate_id('platform') }} AS console_id
+        game_id
+        , console_id
         , 'jp' as region_id
         , jp_sales AS sales_subtotal
-    FROM {{ ref('raw__sales') }}
+    FROM {{ ref('stg__sales') }}
     WHERE jp_sales > 0
 ),
 other_sales AS (
     SELECT
-        {{ generate_id('name') }} AS game_id
-        , {{ generate_id('platform') }} AS console_id
+        game_id
+        , console_id
         , 'other' as region_id
         , other_sales AS sales_subtotal
-    FROM {{ ref('raw__sales') }}
+    FROM {{ ref('stg__sales') }}
     WHERE other_sales > 0
 ),
 
 -- Combine all sales data into one table
 
-final AS (
+merged AS (
     SELECT * FROM na_sales
     UNION ALL
     SELECT * FROM eu_sales
@@ -46,6 +46,13 @@ final AS (
     SELECT * FROM jp_sales
     UNION ALL
     SELECT * FROM other_sales
+)
+
+, final AS (
+    SELECT 
+        {{ dbt_utils.generate_surrogate_key(['game_id', 'console_id', 'region_id']) }} AS id,
+        *
+    FROM merged
 )
 
 SELECT * FROM final
