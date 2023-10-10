@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: address
+    description: "Addresses of a customer. 1 customer can have multiple addresses"
+    columns:
+      - name: address_id
+        description: "Unique identifier for the address. Surrogate key."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Unique identifier for the customer"
+        tests:
+          - not_null
+      - name: city_name
+        description: "Name of the city"
+        tests:
+          - not_null
+      - name: state_code
+        description: "Two-letter abbreviation of the state"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^[A-Z]{2}$"
+      - name: country_code
+        description: "Three-letter abbreviation of the country"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^[A-Z]{3}$"
+      - name: postal_code
+        description: "Postal code"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^[0-9]{5}$"
+      - name: region_name
+        description: "Name of the sales region"
+        tests:
+          - not_null

@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: order
+    columns:
+      - name: order_id
+        description: "Unique identifier for the order"
+        tests:
+          - unique
+          - not_null
+      - name: order_date
+        description: "Date the order was placed"
+        tests:
+          - not_null
+          - is_valid_order_date
+      - name: ship_date
+        description: "Date the order was shipped"
+        tests:
+          - is_valid_order_date

@@ -119,7 +119,7 @@ dbt docs serve
 
 ### Data Set
 
-We are using a sample dataset of video game sales, source from here:
-https://www.kaggle.com/datasets/ulrikthygepedersen/video-games-sales
+We are using a sample dataset of sales data found here:
+https://community.tableau.com/s/question/0D54T00000CWeX8SAL/sample-superstore-sales-excelxls
 
-I created a companion dataset with names for each platform/console.
+I created a companion seed data sets with country and state to enrich the data.

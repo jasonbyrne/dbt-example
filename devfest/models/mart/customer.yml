@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: customer
+    description: "Customers who have made a purchase"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for the customer"
+        tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "Name of the customer"
+        tests:
+          - not_null
+      - name: segment_id
+        description: "Segment the customer belongs to"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_segment')
+              field: segment_id

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: sales
+    database: warehouse
+    schema: devfest_raw
+    tables:
+      - name: raw__orders
+      - name: raw__returns
