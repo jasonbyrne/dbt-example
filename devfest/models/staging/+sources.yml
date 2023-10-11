@@ -7,3 +7,6 @@ sources:
     tables:
       - name: raw__orders
       - name: raw__returns
+      - name: seed__countries
+      - name: seed__states
+      - name: seed__sales_regions

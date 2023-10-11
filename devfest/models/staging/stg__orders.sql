@@ -69,6 +69,7 @@ WITH renamed AS (
         , states.abbreviation AS state_code
         , state_name
         , postal_code
+        , {{ generate_id('region_name') }} AS region_id
         , region_name
         , product_id
         , product_name

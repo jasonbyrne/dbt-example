@@ -1,0 +1,5 @@
+region_name,salesperson,commission,email
+South,John Doe,0.10,john.doe@mycompany.com
+West,Ricky Public,0.15,ricky.public@mycompany.com
+East,Jane Smith,0.125,jane.smith@mycompany.com
+Central,Veronica Mars,0.15,veronica.mars@mycompany.com

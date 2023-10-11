@@ -18,5 +18,5 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_segment')
+              to: ref('segment')
               field: segment_id

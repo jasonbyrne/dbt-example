@@ -6,7 +6,7 @@ WITH source AS (
         , state_code
         , country_code
         , postal_code
-        , region_name
+        , region_id
     FROM {{ ref('stg__orders') }}
 )
 
