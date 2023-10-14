@@ -2,6 +2,9 @@
 
 This project is a boilerplate to accompany my session on the basics of dbt, first developed for DevFest Central Florida 2023.
 
+Here is the accompanying presentation from my session:
+[https://docs.google.com/presentation/d/1G1chaXmK8JbQOkhMOreiBKIQlDqo4g7wtswjLN2pAVU/edit?usp=sharing]
+
 ## Before getting started
 
 You must install these prerequisites.

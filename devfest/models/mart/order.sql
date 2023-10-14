@@ -39,7 +39,9 @@ WITH orders AS (
 , final AS (
     SELECT 
         orders.*
-        , CASE WHEN returned_orders.order_id IS NULL THEN false ELSE true END AS is_returned
+        , CASE WHEN returned_orders.order_id IS NULL THEN false 
+            ELSE true 
+            END AS is_returned
         , order_sales.total_cents
         , order_sales.profit_cents
         , sales_person.salesperson_name
